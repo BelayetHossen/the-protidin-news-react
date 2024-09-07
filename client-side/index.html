@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:8000/images/identity/1719241671.png" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The protidin</title>
+  <script>
+    if (localStorage.theme === 'dark' || !('theme' in localStorage)) {
+      document.querySelector('html').classList.add('dark');
+      document.querySelector('html').style.colorScheme = 'dark';
+    } else {
+      document.querySelector('html').classList.remove('dark');
+      document.querySelector('html').style.colorScheme = 'light';
+    }        
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="frontend/css/header-style.css">
+</head>
+
+<body class="font-inter antialiased bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
+  <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+  <script>
+    if (localStorage.getItem('sidebar-expanded') == 'true') {
+      document.querySelector('body').classList.add('sidebar-expanded');
+    } else {
+      document.querySelector('body').classList.remove('sidebar-expanded');
+    }
+  </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
